@@ -1,0 +1,13 @@
+langchain>=1.0.0
+markdown2
+langchain-openai
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-chroma
+langchain-text-splitters
+sentence-transformers
+streamlit
+python-docx
+bs4
+docx2txt

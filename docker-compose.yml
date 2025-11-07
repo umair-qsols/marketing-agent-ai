@@ -1,0 +1,20 @@
+services:
+  marketing-ai:
+    build: .
+    container_name: marketing-ai
+    ports:
+      - "8501:8501"
+    volumes:
+      # Persist templates & vector DB
+      - ./templates:/app/templates
+      - ./chroma_db:/app/chroma_db
+
+      # <-- THIS IS THE KEY LINE -->
+      - ./.streamlit:/app/.streamlit   # <-- brings secrets.toml into container
+
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

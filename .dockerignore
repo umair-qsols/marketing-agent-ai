@@ -1,0 +1,9 @@
+.git
+node_modules
+__pycache__
+*.log
+*.csv
+*.zip
+*.tar.gz
+chroma_db
+venv

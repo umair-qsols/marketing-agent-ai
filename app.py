@@ -30,7 +30,7 @@ if not template_names:
     st.error("No templates found! Put **.docx** files in `./templates/` and restart.")
     st.stop()
 
-st.title("Marketing Document Generator")
+st.title("Marketing Agent AI")
 
 selected = st.selectbox("Choose a template", options=template_names)
 
@@ -120,6 +120,6 @@ if "questions" in st.session_state:
                 st.download_button(
                     label="Download .docx",
                     data=docx_bytes,
-                    file_name=f"{selected}_{datetime.now().strftime('%Y%m%d')}.docx",
+                    file_name=f"{selected} {datetime.now().strftime('%Y%m%d')}.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 )
